@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentes IA - CRM Dash</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <a href="agents.html" class="sidebar-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <path d="M4 4 L24 4 L24 24" stroke="#e69400" stroke-width="3" stroke-linecap="round"/>
+          <path d="M4 4 L22 22" stroke="#e69400" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </a>
+      <div class="sidebar-menu-toggle">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M3 5h14M3 10h14M3 15h14" stroke="#9eaab3" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-links">
+        <a href="agents.html" class="sidebar-link active" title="Agentes IA">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main-content">
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="topbar-breadcrumb">
+          <span class="breadcrumb-item">Página inicial</span>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-item active">Agentes IA</span>
+        </div>
+        <div class="topbar-user">
+          <div class="brand-chip">
+            <div class="brand-logo-box">VIVARA</div>
+            <span class="brand-name">Vivara</span>
+            <div class="brand-divider"></div>
+            <span class="brand-change">Trocar marca</span>
+          </div>
+          <div class="avatar-chip">
+            <div class="avatar-img">👤</div>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="caret-icon">
+              <path d="M4 6l4 4 4-4" stroke="#9eaab3" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </header>
+
+      <!-- BODY -->
+      <div class="body-scroll">
+        <div class="page-header">
+          <h2>Agentes IA</h2>
+          <p>Selecione um agente para começar</p>
+        </div>
+
+        <div class="agents-grid">
+          <a href="dashboard.html" class="agent-card">
+            <div class="agent-card-header">
+              <div>
+                <div class="agent-card-title">Agente de reativação</div>
+                <div class="agent-card-name">Corre Atrás</div>
+              </div>
+              <svg class="caret-right" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p class="agent-card-desc">Seleciona e reativa clientes inativos com alto potencial de retorno</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

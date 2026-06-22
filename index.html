@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - CRM Dash</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+  <div class="login-layout">
+    <!-- Banner lado esquerdo -->
+    <div class="login-banner">
+      <div class="banner-inner">
+        <div class="banner-logo">
+          <svg width="383" height="115" viewBox="0 0 383 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="50" y="72" font-family="Inter, sans-serif" font-weight="400" font-size="52" fill="white" letter-spacing="-1">crmbonus</text>
+            <g transform="translate(318, 32)">
+              <path d="M0 0 L32 0 L32 32 L0 0Z" fill="#E69400"/>
+              <path d="M8 8 L32 8 L32 32" stroke="#E69400" stroke-width="3" fill="none"/>
+            </g>
+          </svg>
+        </div>
+        <!-- Setas decorativas -->
+        <div class="banner-arrows">
+          <svg width="100%" height="100%" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <radialGradient id="glow" cx="50%" cy="60%" r="50%">
+                <stop offset="0%" stop-color="#e69400" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#e69400" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <ellipse cx="200" cy="250" rx="180" ry="120" fill="url(#glow)"/>
+            <!-- Seta principal grande -->
+            <path d="M120 320 L200 180 L280 240" stroke="#e69400" stroke-width="3" fill="none" opacity="0.9"/>
+            <path d="M270 220 L280 240 L260 240" fill="#e69400"/>
+            <!-- Setas menores -->
+            <path d="M60 360 L110 290" stroke="#c0782a" stroke-width="2" fill="none" opacity="0.5"/>
+            <path d="M104 280 L110 290 L100 292" fill="#c0782a" opacity="0.5"/>
+            <path d="M140 360 L190 300" stroke="#c0782a" stroke-width="2" fill="none" opacity="0.4"/>
+            <path d="M184 290 L190 300 L180 302" fill="#c0782a" opacity="0.4"/>
+            <path d="M250 350 L310 280" stroke="#c0782a" stroke-width="2" fill="none" opacity="0.3"/>
+            <path d="M304 270 L310 280 L300 282" fill="#c0782a" opacity="0.3"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulário lado direito -->
+    <div class="login-form-side">
+      <div class="login-form">
+        <div class="login-text">
+          <h1>Boas-vindas ao CRM Dash</h1>
+          <p>Por aqui, você pode transformar dados em decisões estratégicas e acompanhar os resultados de cada cliente.</p>
+        </div>
+        <div class="form-fields">
+          <div class="form-item">
+            <label for="login">Login</label>
+            <input type="text" id="login" placeholder="">
+          </div>
+          <div class="form-item">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" placeholder="">
+          </div>
+        </div>
+        <a href="agents.html" class="btn-primary">Fazer Login</a>
+        <div class="login-help">
+          <span>Problemas para entrar? </span>
+          <a href="#">Solicitar suporte</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
