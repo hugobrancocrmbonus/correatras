@@ -4,7 +4,31 @@
       "mcp__da6f421c-a068-49e7-89cd-259f108161e5__get_metadata",
       "mcp__da6f421c-a068-49e7-89cd-259f108161e5__get_design_context",
       "Bash(git init *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx --version)",
+      "mcp__ca35b8f3-4bd8-46d3-a2f8-3c8a05199dd4__getConfluencePage",
+      "mcp__ca35b8f3-4bd8-46d3-a2f8-3c8a05199dd4__getConfluencePageDescendants",
+      "mcp__ca35b8f3-4bd8-46d3-a2f8-3c8a05199dd4__searchConfluenceUsingCql",
+      "Bash(npm create *)",
+      "Bash(npx create-vite@latest . --template react-ts)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "mcp__da6f421c-a068-49e7-89cd-259f108161e5__get_screenshot",
+      "WebFetch(domain:agente-ia-crmb-onus.vercel.app)",
+      "mcp__visualize__read_me",
+      "Bash(curl -s -o /tmp/figma_screenshot.png \"https://www.figma.com/api/mcp/asset/eef1e8ed-9200-489e-b7a6-a6ef548e6b87\")",
+      "mcp__da6f421c-a068-49e7-89cd-259f108161e5__use_figma",
+      "WebFetch(domain:italo-lima.github.io)",
+      "Bash(gh api *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(npx storybook@latest init --yes)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:6006)",
+      "Bash(kill 41365)",
+      "Bash(git remote *)"
     ]
   }
 }

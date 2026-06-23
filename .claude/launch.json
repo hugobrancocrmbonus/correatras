@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "corre-atras",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "/Users/hugobranco/Documents/Iniciativas de IA/corre atras",
+      "port": 5173
+    },
+    {
+      "name": "storybook",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "storybook", "--", "--no-open"],
+      "cwd": "/Users/hugobranco/Documents/Iniciativas de IA/corre atras",
+      "port": 6006
+    }
+  ]
+}
