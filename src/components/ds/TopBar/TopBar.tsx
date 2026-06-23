@@ -95,25 +95,39 @@ export function TopBar({
                 )}
 
                 {/* Item */}
-                <div
-                  className="flex items-center justify-center h-[32px] px-2"
-                  style={{ borderRadius: 'var(--cds-radius-sm)', cursor: item.onClick ? 'pointer' : 'default' }}
-                  onClick={item.onClick}
-                >
-                  <span
-                    className="text-[12px] leading-[16px] whitespace-nowrap"
+                {item.onClick ? (
+                  <button
+                    onClick={item.onClick}
                     style={{
-                      fontWeight: isLast ? 600 : 400,
-                      color: isLast
-                        ? 'var(--crm-fg-neutral-strong)'
-                        : item.onClick
-                        ? 'var(--crm-fg-primary-default)'
-                        : 'var(--crm-fg-neutral-weak)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      height: 32, padding: '0 8px',
+                      borderRadius: 'var(--cds-radius-sm)',
+                      background: 'none', border: 'none', cursor: 'pointer',
+                      fontSize: 12, fontWeight: 400, lineHeight: '16px', whiteSpace: 'nowrap',
+                      color: 'var(--crm-fg-primary-default)',
                     }}
                   >
                     {item.label}
-                  </span>
-                </div>
+                  </button>
+                ) : (
+                  <div
+                    style={{
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      height: 32, padding: '0 8px',
+                      borderRadius: 'var(--cds-radius-sm)',
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: 12, lineHeight: '16px', whiteSpace: 'nowrap',
+                        fontWeight: isLast ? 600 : 400,
+                        color: isLast ? 'var(--crm-fg-neutral-strong)' : 'var(--crm-fg-neutral-weak)',
+                      }}
+                    >
+                      {item.label}
+                    </span>
+                  </div>
+                )}
               </div>
             )
           })}
