@@ -1,11 +1,13 @@
 import type { Preview } from '@storybook/react-vite'
+import { useEffect } from 'react'
 import '../src/tokens/index.css'
 import '../src/index.css'
 
-const DARK_BG  = '#121416'
+const DARK_BG = '#121416'
 const LIGHT_BG = '#f4f7fa'
 
 function resolveBg(globals: Record<string, unknown>): string {
+  // Storybook can return the name string OR an object with .value
   const raw = globals?.backgrounds
   if (!raw) return DARK_BG
   if (typeof raw === 'string') return raw === 'light' ? LIGHT_BG : DARK_BG
@@ -35,22 +37,17 @@ const preview: Preview = {
   },
   decorators: [
     (Story, context) => {
-      const bg      = resolveBg(context.globals as Record<string, unknown>)
-      const isLight = bg === LIGHT_BG
+      const bg = resolveBg(context.globals as Record<string, unknown>)
+      const isDark = bg !== LIGHT_BG
 
-      // Dark é o padrão (:root) — só precisa setar atributo para light mode.
-      // Aplica no documentElement para cobrir elementos fixed/portalizados.
-      if (typeof document !== 'undefined') {
-        if (isLight) {
-          document.documentElement.setAttribute('data-theme', 'light')
-        } else {
-          document.documentElement.removeAttribute('data-theme')
-        }
-      }
+      useEffect(() => {
+        // Cobre elementos portalizados (fixed/absolute) fora do wrapper
+        document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light')
+      }, [isDark])
 
       return (
         <div
-          data-theme={isLight ? 'light' : undefined}
+          data-theme={isDark ? 'dark' : 'light'}
           style={{ backgroundColor: bg, minHeight: '100vh', padding: 32 }}
         >
           <Story />

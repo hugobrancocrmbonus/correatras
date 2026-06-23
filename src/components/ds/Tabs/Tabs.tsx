@@ -16,7 +16,7 @@ export function Tabs({ items, activeId, onChange }: TabsProps) {
         display: 'flex',
         alignItems: 'center',
         gap: 0,
-        borderBottom: '1px solid var(--cds-color-border-subtle)',
+        borderBottom: '1px solid var(--cds-border-subtle)',
         width: '100%',
       }}
     >
@@ -39,8 +39,8 @@ export function Tabs({ items, activeId, onChange }: TabsProps) {
               border: 'none',
               cursor: 'pointer',
               color: isActive
-                ? 'var(--cds-color-brand-text)'
-                : 'var(--cds-color-text-primary)',
+                ? 'var(--crm-fg-primary-default)'
+                : 'var(--crm-fg-neutral-strong)',
               fontSize: 14,
               fontWeight: 500,
               lineHeight: '20px',
@@ -59,7 +59,7 @@ export function Tabs({ items, activeId, onChange }: TabsProps) {
                   left: 0,
                   right: 0,
                   height: 2,
-                  background: 'var(--cds-color-brand-text)',
+                  background: 'var(--crm-fg-primary-default)',
                   borderRadius: '2px 2px 0 0',
                 }}
               />

@@ -57,8 +57,8 @@ export function Table<T extends Record<string, unknown>>({ columns, rows, onSear
             alignItems: 'center',
             flex: 1,
             height: 40,
-            backgroundColor: 'var(--cds-color-background-field)',
-            border: '1px solid var(--cds-color-border-subtle)',
+            backgroundColor: 'var(--crm-search-bg)',
+            border: '1px solid var(--crm-search-border)',
             borderRadius: 4,
             overflow: 'hidden',
           }}
@@ -76,7 +76,7 @@ export function Table<T extends Record<string, unknown>>({ columns, rows, onSear
               border: 'none',
               outline: 'none',
               fontSize: 14,
-              color: 'var(--cds-color-text-primary)',
+              color: 'var(--crm-fg-neutral-strong)',
               caretColor: '#ffbb40',
             }}
           />
@@ -88,8 +88,8 @@ export function Table<T extends Record<string, unknown>>({ columns, rows, onSear
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              borderLeft: '1px solid var(--cds-color-border-subtle)',
-              color: 'var(--cds-color-icon-secondary)',
+              borderLeft: '1px solid var(--crm-search-border)',
+              color: 'var(--crm-fg-neutral-weak)',
             }}
           >
             <SearchIcon />
@@ -105,10 +105,10 @@ export function Table<T extends Record<string, unknown>>({ columns, rows, onSear
             height: 40,
             padding: '0 12px',
             background: 'none',
-            border: '1px solid var(--cds-color-text-primary)',
+            border: '1px solid var(--crm-fg-neutral-strong)',
             borderRadius: 4,
             cursor: 'pointer',
-            color: 'var(--cds-color-text-primary)',
+            color: 'var(--crm-fg-neutral-strong)',
             fontSize: 14,
             fontWeight: 500,
             whiteSpace: 'nowrap',
@@ -142,10 +142,10 @@ export function Table<T extends Record<string, unknown>>({ columns, rows, onSear
                     fontSize: 12,
                     fontWeight: 500,
                     lineHeight: '16px',
-                    color: 'var(--cds-color-icon-secondary)',
-                    borderBottom: '1px solid var(--cds-color-border-subtle)',
-                    borderTop: '1px solid var(--cds-color-border-subtle)',
-                    backgroundColor: 'var(--cds-color-background-layer-01)',
+                    color: 'var(--crm-fg-neutral-weak)',
+                    borderBottom: '1px solid var(--cds-border-subtle)',
+                    borderTop: '1px solid var(--cds-border-subtle)',
+                    backgroundColor: 'var(--cds-bg-layer-01)',
                     whiteSpace: 'nowrap',
                     userSelect: 'none',
                   }}
@@ -163,10 +163,10 @@ export function Table<T extends Record<string, unknown>>({ columns, rows, onSear
                   fontSize: 12,
                   fontWeight: 500,
                   lineHeight: '16px',
-                  color: 'var(--cds-color-icon-secondary)',
-                  borderBottom: '1px solid var(--cds-color-border-subtle)',
-                  borderTop: '1px solid var(--cds-color-border-subtle)',
-                  backgroundColor: 'var(--cds-color-background-layer-01)',
+                  color: 'var(--crm-fg-neutral-weak)',
+                  borderBottom: '1px solid var(--cds-border-subtle)',
+                  borderTop: '1px solid var(--cds-border-subtle)',
+                  backgroundColor: 'var(--cds-bg-layer-01)',
                 }}
               />
             </tr>
@@ -178,7 +178,7 @@ export function Table<T extends Record<string, unknown>>({ columns, rows, onSear
               <tr
                 key={ri}
                 style={{ transition: 'background 0.1s' }}
-                onMouseEnter={e => (e.currentTarget.style.background = 'var(--cds-color-background-layer-02)')}
+                onMouseEnter={e => (e.currentTarget.style.background = 'var(--cds-bg-layer-02)')}
                 onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
               >
                 {columns.map(col => (
@@ -191,8 +191,8 @@ export function Table<T extends Record<string, unknown>>({ columns, rows, onSear
                       fontSize: 12,
                       fontWeight: 400,
                       lineHeight: '20px',
-                      color: 'var(--cds-color-text-primary)',
-                      borderBottom: '1px solid var(--cds-color-border-subtle)',
+                      color: 'var(--crm-fg-neutral-strong)',
+                      borderBottom: '1px solid var(--cds-border-subtle)',
                       whiteSpace: 'nowrap',
                     }}
                   >
@@ -205,7 +205,7 @@ export function Table<T extends Record<string, unknown>>({ columns, rows, onSear
                     padding: '0 12px',
                     height: 64,
                     textAlign: 'center',
-                    borderBottom: '1px solid var(--cds-color-border-subtle)',
+                    borderBottom: '1px solid var(--cds-border-subtle)',
                   }}
                 >
                   <button
@@ -215,7 +215,7 @@ export function Table<T extends Record<string, unknown>>({ columns, rows, onSear
                       background: 'none',
                       border: 'none',
                       cursor: 'pointer',
-                      color: 'var(--cds-color-icon-secondary)',
+                      color: 'var(--crm-fg-neutral-weak)',
                       fontSize: 18,
                       lineHeight: 1,
                       borderRadius: 4,
@@ -223,8 +223,8 @@ export function Table<T extends Record<string, unknown>>({ columns, rows, onSear
                       alignItems: 'center',
                       justifyContent: 'center',
                     }}
-                    onMouseEnter={e => (e.currentTarget.style.color = 'var(--cds-color-text-primary)')}
-                    onMouseLeave={e => (e.currentTarget.style.color = 'var(--cds-color-icon-secondary)')}
+                    onMouseEnter={e => (e.currentTarget.style.color = 'var(--crm-fg-neutral-strong)')}
+                    onMouseLeave={e => (e.currentTarget.style.color = 'var(--crm-fg-neutral-weak)')}
                     aria-label="Ações"
                   >
                     ⋮
@@ -243,9 +243,9 @@ export function Table<T extends Record<string, unknown>>({ columns, rows, onSear
           alignItems: 'center',
           justifyContent: 'space-between',
           padding: '12px 0',
-          borderTop: '1px solid var(--cds-color-border-subtle)',
+          borderTop: '1px solid var(--cds-border-subtle)',
           fontSize: 13,
-          color: 'var(--cds-color-icon-secondary)',
+          color: 'var(--crm-fg-neutral-weak)',
         }}
       >
         <span>{rows.length} registros</span>
@@ -256,10 +256,10 @@ export function Table<T extends Record<string, unknown>>({ columns, rows, onSear
               style={{
                 width: 32,
                 height: 32,
-                border: p === 1 ? '1px solid #ffbb40' : '1px solid var(--cds-color-border-subtle)',
+                border: p === 1 ? '1px solid #ffbb40' : '1px solid var(--cds-border-subtle)',
                 borderRadius: 4,
                 background: p === 1 ? 'rgba(255,187,64,0.12)' : 'none',
-                color: p === 1 ? '#ffbb40' : 'var(--cds-color-icon-secondary)',
+                color: p === 1 ? '#ffbb40' : 'var(--crm-fg-neutral-weak)',
                 cursor: 'pointer',
                 fontSize: 13,
                 fontWeight: p === 1 ? 600 : 400,

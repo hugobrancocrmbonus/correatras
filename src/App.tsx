@@ -44,19 +44,11 @@ export function App() {
   function toggleTheme() {
     const next = theme === 'light' ? 'dark' : 'light'
     setTheme(next)
-    if (next === 'light') {
-      document.documentElement.setAttribute('data-theme', 'light')
-    } else {
-      document.documentElement.removeAttribute('data-theme')
-    }
+    document.documentElement.classList.toggle('dark', next === 'dark')
   }
 
   if (typeof document !== 'undefined') {
-    if (theme === 'light') {
-      document.documentElement.setAttribute('data-theme', 'light')
-    } else {
-      document.documentElement.removeAttribute('data-theme')
-    }
+    document.documentElement.classList.toggle('dark', theme === 'dark')
   }
 
   const navItems = [

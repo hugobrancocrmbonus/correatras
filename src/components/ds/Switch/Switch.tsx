@@ -51,7 +51,7 @@ export function Switch({ label, checked = false, onChange }: SwitchProps) {
             fontSize: 14,
             fontWeight: 400,
             lineHeight: '20px',
-            color: 'var(--cds-color-text-primary)',
+            color: 'var(--crm-fg-neutral-strong)',
           }}
         >
           {label}
