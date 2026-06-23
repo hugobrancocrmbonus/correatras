@@ -82,59 +82,63 @@
   --cds-font-weight-bold:     700;
 }
 
-/* ─── Tier 2: Semantic — LIGHT MODE (default) ───────────────────────────── */
+/* ─── Tier 2: Semantic — DARK MODE (default — sem seletor) ──────────────────
+ * Dark é o tema padrão do produto. Não exige JS nem data-theme para funcionar,
+ * garantindo que elementos fixed/portalizados (drawers, modals) nasçam dark.
+ * Light mode requer [data-theme="light"] explícito.
+ * ─────────────────────────────────────────────────────────────────────────── */
 :root {
   /* background */
-  --cds-color-background-layer-01: var(--cds-primitive-neutral-0);
-  --cds-color-background-layer-02: var(--cds-primitive-neutral-50);
-  --cds-color-background-layer-03: var(--cds-primitive-neutral-100);
-  --cds-color-background-field:    var(--cds-primitive-neutral-50);
-  --cds-color-background-hover:    var(--cds-primitive-neutral-100);
-  --cds-color-background-pressed:  var(--cds-primitive-neutral-300);
-  --cds-color-background-disabled: var(--cds-primitive-neutral-200);
-  --cds-color-background-inverse:  var(--cds-primitive-neutral-900);
+  --cds-color-background-layer-01: var(--cds-primitive-neutral-950);
+  --cds-color-background-layer-02: var(--cds-primitive-neutral-900);
+  --cds-color-background-layer-03: var(--cds-primitive-neutral-800);
+  --cds-color-background-field:    var(--cds-primitive-neutral-900);
+  --cds-color-background-hover:    var(--cds-primitive-neutral-800);
+  --cds-color-background-pressed:  var(--cds-primitive-neutral-700);
+  --cds-color-background-disabled: var(--cds-primitive-neutral-800);
+  --cds-color-background-inverse:  var(--cds-primitive-neutral-50);
 
   /* text */
-  --cds-color-text-primary:     var(--cds-primitive-neutral-900);
-  --cds-color-text-secondary:   var(--cds-primitive-neutral-700);
-  --cds-color-text-placeholder: var(--cds-primitive-neutral-600);
-  --cds-color-text-disabled:    var(--cds-primitive-neutral-500);
-  --cds-color-text-on-color:    var(--cds-primitive-neutral-0);
+  --cds-color-text-primary:     var(--cds-primitive-neutral-50);
+  --cds-color-text-secondary:   var(--cds-primitive-neutral-300);
+  --cds-color-text-placeholder: var(--cds-primitive-neutral-500);
+  --cds-color-text-disabled:    var(--cds-primitive-neutral-700);
+  --cds-color-text-on-color:    var(--cds-primitive-neutral-950);
   --cds-color-text-on-brand:    var(--cds-primitive-neutral-950);
-  --cds-color-text-inverse:     var(--cds-primitive-neutral-50);
-  --cds-color-text-danger:      var(--cds-primitive-red-700);
+  --cds-color-text-inverse:     var(--cds-primitive-neutral-900);
+  --cds-color-text-danger:      var(--cds-primitive-red-300);
 
   /* icon */
-  --cds-color-icon-primary:   var(--cds-primitive-neutral-900);
-  --cds-color-icon-secondary: var(--cds-primitive-neutral-700);
-  --cds-color-icon-disabled:  var(--cds-primitive-neutral-500);
-  --cds-color-icon-on-color:  var(--cds-primitive-neutral-0);
+  --cds-color-icon-primary:   var(--cds-primitive-neutral-50);
+  --cds-color-icon-secondary: var(--cds-primitive-neutral-300);
+  --cds-color-icon-disabled:  var(--cds-primitive-neutral-700);
+  --cds-color-icon-on-color:  var(--cds-primitive-neutral-950);
   --cds-color-icon-on-brand:  var(--cds-primitive-neutral-950);
-  --cds-color-icon-inverse:   var(--cds-primitive-neutral-50);
-  --cds-color-icon-danger:    var(--cds-primitive-red-700);
+  --cds-color-icon-inverse:   var(--cds-primitive-neutral-900);
+  --cds-color-icon-danger:    var(--cds-primitive-red-300);
 
   /* border */
-  --cds-color-border-subtle:      var(--cds-primitive-neutral-200);
-  --cds-color-border-strong:      var(--cds-primitive-neutral-600);
-  --cds-color-border-interactive: var(--cds-primitive-brand-600);
-  --cds-color-border-disabled:    var(--cds-primitive-neutral-200);
-  --cds-color-border-focus:       var(--cds-primitive-blue-600);
+  --cds-color-border-subtle:      var(--cds-primitive-neutral-800);
+  --cds-color-border-strong:      var(--cds-primitive-neutral-500);
+  --cds-color-border-interactive: var(--cds-primitive-brand-400);
+  --cds-color-border-disabled:    var(--cds-primitive-neutral-700);
+  --cds-color-border-focus:       var(--cds-primitive-blue-400);
 
   /* brand */
-  --cds-color-brand-background:         var(--cds-primitive-brand-400);
-  --cds-color-brand-background-hover:   var(--cds-primitive-brand-500);
-  --cds-color-brand-background-pressed: var(--cds-primitive-brand-600);
-  --cds-color-brand-text:               var(--cds-primitive-brand-700);
+  --cds-color-brand-background:         var(--cds-primitive-brand-500);
+  --cds-color-brand-background-hover:   var(--cds-primitive-brand-400);
+  --cds-color-brand-background-pressed: var(--cds-primitive-brand-300);
+  --cds-color-brand-text:               var(--cds-primitive-brand-300);
 
   /* support */
-  --cds-color-support-success:        var(--cds-primitive-green-600);
-  --cds-color-support-success-subtle: var(--cds-primitive-green-50);
+  --cds-color-support-success:        var(--cds-primitive-green-400);
+  --cds-color-support-success-subtle: var(--cds-primitive-green-900);
   --cds-color-support-danger:         var(--cds-primitive-red-600);
-  --cds-color-support-danger-subtle:  var(--cds-primitive-red-50);
-  --cds-color-support-warning:        var(--cds-primitive-yellow-600);
-  --cds-color-support-warning-subtle: var(--cds-primitive-yellow-50);
-  --cds-color-support-info:           var(--cds-primitive-blue-600);
-  --cds-color-support-info-subtle:    var(--cds-primitive-blue-50);
+  --cds-color-support-danger-subtle:  var(--cds-primitive-red-900);
+  --cds-color-support-warning:        var(--cds-primitive-yellow-400);
+  --cds-color-support-warning-subtle: var(--cds-primitive-yellow-900);
+  --cds-color-support-info:           var(--cds-primitive-blue-400);
+  --cds-color-support-info-subtle:    var(--cds-primitive-blue-900);
 
   /* ─── Tier 2: Semantic — Spacing ──────────────────────────────────── */
   --cds-space-none: 0px;
@@ -190,57 +194,57 @@
   --cds-text-font-family: var(--cds-font-family-sans);
 }
 
-/* ─── Tier 2: Semantic — DARK MODE ─────────────────────────────────────── */
-.dark, [data-theme="dark"] {
+/* ─── Tier 2: Semantic — LIGHT MODE (opt-in via [data-theme="light"]) ──────── */
+.light, [data-theme="light"] {
   /* background */
-  --cds-color-background-layer-01: var(--cds-primitive-neutral-950);
-  --cds-color-background-layer-02: var(--cds-primitive-neutral-900);
-  --cds-color-background-layer-03: var(--cds-primitive-neutral-800);
-  --cds-color-background-field:    var(--cds-primitive-neutral-900);
-  --cds-color-background-hover:    var(--cds-primitive-neutral-800);
-  --cds-color-background-pressed:  var(--cds-primitive-neutral-700);
-  --cds-color-background-disabled: var(--cds-primitive-neutral-800);
-  --cds-color-background-inverse:  var(--cds-primitive-neutral-50);
+  --cds-color-background-layer-01: var(--cds-primitive-neutral-0);
+  --cds-color-background-layer-02: var(--cds-primitive-neutral-50);
+  --cds-color-background-layer-03: var(--cds-primitive-neutral-100);
+  --cds-color-background-field:    var(--cds-primitive-neutral-50);
+  --cds-color-background-hover:    var(--cds-primitive-neutral-100);
+  --cds-color-background-pressed:  var(--cds-primitive-neutral-300);
+  --cds-color-background-disabled: var(--cds-primitive-neutral-200);
+  --cds-color-background-inverse:  var(--cds-primitive-neutral-900);
 
   /* text */
-  --cds-color-text-primary:     var(--cds-primitive-neutral-50);
-  --cds-color-text-secondary:   var(--cds-primitive-neutral-300);
-  --cds-color-text-placeholder: var(--cds-primitive-neutral-500);
-  --cds-color-text-disabled:    var(--cds-primitive-neutral-700);
-  --cds-color-text-on-color:    var(--cds-primitive-neutral-950);
+  --cds-color-text-primary:     var(--cds-primitive-neutral-900);
+  --cds-color-text-secondary:   var(--cds-primitive-neutral-700);
+  --cds-color-text-placeholder: var(--cds-primitive-neutral-600);
+  --cds-color-text-disabled:    var(--cds-primitive-neutral-500);
+  --cds-color-text-on-color:    var(--cds-primitive-neutral-0);
   --cds-color-text-on-brand:    var(--cds-primitive-neutral-950);
-  --cds-color-text-inverse:     var(--cds-primitive-neutral-900);
-  --cds-color-text-danger:      var(--cds-primitive-red-300);
+  --cds-color-text-inverse:     var(--cds-primitive-neutral-50);
+  --cds-color-text-danger:      var(--cds-primitive-red-700);
 
   /* icon */
-  --cds-color-icon-primary:   var(--cds-primitive-neutral-50);
-  --cds-color-icon-secondary: var(--cds-primitive-neutral-300);
-  --cds-color-icon-disabled:  var(--cds-primitive-neutral-700);
-  --cds-color-icon-on-color:  var(--cds-primitive-neutral-950);
+  --cds-color-icon-primary:   var(--cds-primitive-neutral-900);
+  --cds-color-icon-secondary: var(--cds-primitive-neutral-700);
+  --cds-color-icon-disabled:  var(--cds-primitive-neutral-500);
+  --cds-color-icon-on-color:  var(--cds-primitive-neutral-0);
   --cds-color-icon-on-brand:  var(--cds-primitive-neutral-950);
-  --cds-color-icon-inverse:   var(--cds-primitive-neutral-900);
-  --cds-color-icon-danger:    var(--cds-primitive-red-300);
+  --cds-color-icon-inverse:   var(--cds-primitive-neutral-50);
+  --cds-color-icon-danger:    var(--cds-primitive-red-700);
 
   /* border */
-  --cds-color-border-subtle:      var(--cds-primitive-neutral-800);
-  --cds-color-border-strong:      var(--cds-primitive-neutral-500);
-  --cds-color-border-interactive: var(--cds-primitive-brand-400);
-  --cds-color-border-disabled:    var(--cds-primitive-neutral-700);
-  --cds-color-border-focus:       var(--cds-primitive-blue-400);
+  --cds-color-border-subtle:      var(--cds-primitive-neutral-200);
+  --cds-color-border-strong:      var(--cds-primitive-neutral-600);
+  --cds-color-border-interactive: var(--cds-primitive-brand-600);
+  --cds-color-border-disabled:    var(--cds-primitive-neutral-200);
+  --cds-color-border-focus:       var(--cds-primitive-blue-600);
 
   /* brand */
-  --cds-color-brand-background:         var(--cds-primitive-brand-500);
-  --cds-color-brand-background-hover:   var(--cds-primitive-brand-400);
-  --cds-color-brand-background-pressed: var(--cds-primitive-brand-300);
-  --cds-color-brand-text:               var(--cds-primitive-brand-300);
+  --cds-color-brand-background:         var(--cds-primitive-brand-400);
+  --cds-color-brand-background-hover:   var(--cds-primitive-brand-500);
+  --cds-color-brand-background-pressed: var(--cds-primitive-brand-600);
+  --cds-color-brand-text:               var(--cds-primitive-brand-700);
 
   /* support */
-  --cds-color-support-success:        var(--cds-primitive-green-400);
-  --cds-color-support-success-subtle: var(--cds-primitive-green-900);
+  --cds-color-support-success:        var(--cds-primitive-green-600);
+  --cds-color-support-success-subtle: var(--cds-primitive-green-50);
   --cds-color-support-danger:         var(--cds-primitive-red-600);
-  --cds-color-support-danger-subtle:  var(--cds-primitive-red-900);
-  --cds-color-support-warning:        var(--cds-primitive-yellow-400);
-  --cds-color-support-warning-subtle: var(--cds-primitive-yellow-900);
-  --cds-color-support-info:           var(--cds-primitive-blue-400);
-  --cds-color-support-info-subtle:    var(--cds-primitive-blue-900);
+  --cds-color-support-danger-subtle:  var(--cds-primitive-red-50);
+  --cds-color-support-warning:        var(--cds-primitive-yellow-600);
+  --cds-color-support-warning-subtle: var(--cds-primitive-yellow-50);
+  --cds-color-support-info:           var(--cds-primitive-blue-600);
+  --cds-color-support-info-subtle:    var(--cds-primitive-blue-50);
 }

@@ -35,19 +35,22 @@ const preview: Preview = {
   },
   decorators: [
     (Story, context) => {
-      const bg     = resolveBg(context.globals as Record<string, unknown>)
-      const isDark = bg !== LIGHT_BG
-      const theme  = isDark ? 'dark' : 'light'
+      const bg      = resolveBg(context.globals as Record<string, unknown>)
+      const isLight = bg === LIGHT_BG
 
-      // Síncrono — garante que os tokens já estão corretos antes do primeiro render,
-      // cobrindo também elementos fixed/portalizados (BrandDrawer, etc.)
+      // Dark é o padrão (:root) — só precisa setar atributo para light mode.
+      // Aplica no documentElement para cobrir elementos fixed/portalizados.
       if (typeof document !== 'undefined') {
-        document.documentElement.setAttribute('data-theme', theme)
+        if (isLight) {
+          document.documentElement.setAttribute('data-theme', 'light')
+        } else {
+          document.documentElement.removeAttribute('data-theme')
+        }
       }
 
       return (
         <div
-          data-theme={theme}
+          data-theme={isLight ? 'light' : undefined}
           style={{ backgroundColor: bg, minHeight: '100vh', padding: 32 }}
         >
           <Story />
