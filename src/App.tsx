@@ -4,9 +4,11 @@ import { TopBar } from '@ds/TopBar/TopBar'
 import { Sidebar } from '@ds/Sidebar/Sidebar'
 import { BrandDrawer, type Brand } from '@ds/BrandDrawer/BrandDrawer'
 import { AgentsPage } from './pages/AgentsPage'
+import { CampaignListPage } from './pages/CampaignListPage'
+import { CreateCampaignPage } from './pages/CreateCampaignPage'
 import { CorreAtrasPage } from './pages/CorreAtrasPage'
 
-type Page = 'agents' | 'corre-atras'
+type Page = 'agents' | 'campaign-list' | 'create-campaign' | 'corre-atras'
 
 const MOCK_BRANDS: Brand[] = [
   { id: '1', name: 'Vivara',       csResponsavel: 'Ana Souza',   logoSrc: 'https://www.figma.com/api/mcp/asset/ed5eb695-3595-48dd-93e0-e44987eaafd9' },
@@ -18,7 +20,6 @@ const MOCK_BRANDS: Brand[] = [
   { id: '7', name: 'Reserva',      csResponsavel: 'Gabi Torres' },
 ]
 
-// Ícone de Agentes IA — seta diagonal (↗)
 function IconAgentes() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -31,6 +32,19 @@ function IconAgentes() {
       />
     </svg>
   )
+}
+
+function breadcrumbFor(page: Page, nav: { toCampaignList: () => void; toAgents: () => void }) {
+  const home   = { label: 'Página inicial' }
+  const agents = { label: 'Agentes IA', onClick: nav.toAgents }
+  const corre  = { label: 'Corre Atrás', onClick: nav.toCampaignList }
+
+  switch (page) {
+    case 'agents':          return [home, { label: 'Agentes IA' }]
+    case 'campaign-list':   return [home, agents, { label: 'Corre Atrás' }]
+    case 'create-campaign': return [home, agents, corre, { label: 'Criar ação' }]
+    case 'corre-atras':     return [home, agents, corre, { label: 'Última chance – Corre atrás' }]
+  }
 }
 
 export function App() {
@@ -51,15 +65,43 @@ export function App() {
     document.documentElement.classList.toggle('dark', theme === 'dark')
   }
 
+  const nav = {
+    toAgents:       () => setPage('agents'),
+    toCampaignList: () => setPage('campaign-list'),
+  }
+
   const navItems = [
     {
       id: 'agents',
       label: 'Agentes IA',
       icon: <IconAgentes />,
       active: activeNav === 'agents',
-      onClick: () => setActiveNav('agents'),
+      onClick: () => { setActiveNav('agents'); setPage('agents') },
     },
   ]
+
+  function renderPage() {
+    switch (page) {
+      case 'agents':
+        return <AgentsPage onSelectAgent={() => setPage('campaign-list')} />
+      case 'campaign-list':
+        return (
+          <CampaignListPage
+            onCreateCampaign={() => setPage('create-campaign')}
+            onSelectCampaign={() => setPage('corre-atras')}
+          />
+        )
+      case 'create-campaign':
+        return (
+          <CreateCampaignPage
+            onCancel={() => setPage('campaign-list')}
+            onSave={() => setPage('corre-atras')}
+          />
+        )
+      case 'corre-atras':
+        return <CorreAtrasPage />
+    }
+  }
 
   return (
     <>
@@ -68,11 +110,7 @@ export function App() {
         topBar={
           <TopBar
             theme={theme}
-            breadcrumb={
-              page === 'agents'
-                ? [{ label: 'Página inicial' }, { label: 'Agentes IA' }]
-                : [{ label: 'Página inicial' }, { label: 'Agentes IA', onClick: () => setPage('agents') }, { label: 'Corre Atrás' }]
-            }
+            breadcrumb={breadcrumbFor(page, nav)}
             showLegacyButton
             brandLogoSrc={activeBrand?.logoSrc}
             brandName={activeBrand?.name}
@@ -88,10 +126,7 @@ export function App() {
           />
         }
       >
-        {page === 'agents'
-          ? <AgentsPage onSelectAgent={() => setPage('corre-atras')} />
-          : <CorreAtrasPage />
-        }
+        {renderPage()}
       </AdminLayout>
 
       <BrandDrawer
