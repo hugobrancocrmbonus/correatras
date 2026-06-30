@@ -108,20 +108,16 @@ export function CampaignListPage({ onCreateCampaign, onSelectCampaign }: Campaig
               <th style={thStyle}>Conversão</th>
               <th style={thStyle}>Lojas ativas</th>
               <th style={thStyle}>Criada em</th>
+              <th style={thStyle}></th>
             </tr>
           </thead>
           <tbody>
             {MOCK_CAMPAIGNS.map((c, i) => (
               <tr
                 key={c.id}
-                onClick={() => onSelectCampaign(c.id)}
                 style={{
                   borderBottom: i < MOCK_CAMPAIGNS.length - 1 ? '1px solid var(--cds-border-subtle)' : undefined,
-                  cursor: 'pointer',
-                  transition: 'background-color 0.15s',
                 }}
-                onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'var(--cds-bg-layer-03)')}
-                onMouseLeave={e => (e.currentTarget.style.backgroundColor = '')}
               >
                 <td style={{ ...tdStyle, fontWeight: 500 }}>{c.name}</td>
                 <td style={tdStyle}><StatusBadge status={c.status} /></td>
@@ -129,6 +125,24 @@ export function CampaignListPage({ onCreateCampaign, onSelectCampaign }: Campaig
                 <td style={tdStyle}>{c.conversao}</td>
                 <td style={tdStyle}>{c.lojas}</td>
                 <td style={tdStyle}>{c.criadaEm}</td>
+                <td style={{ ...tdStyle, textAlign: 'right' }}>
+                  <button
+                    onClick={() => onSelectCampaign(c.id)}
+                    style={{
+                      background: 'none',
+                      border: '1px solid var(--cds-border-subtle)',
+                      borderRadius: 4,
+                      padding: '6px 16px',
+                      fontSize: 13,
+                      fontWeight: 500,
+                      color: 'var(--crm-fg-primary-default)',
+                      cursor: 'pointer',
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    Ver campanha
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
