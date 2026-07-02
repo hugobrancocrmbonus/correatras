@@ -7,8 +7,9 @@ import { AgentsPage } from './pages/AgentsPage'
 import { CampaignListPage } from './pages/CampaignListPage'
 import { CreateCampaignPage } from './pages/CreateCampaignPage'
 import { CorreAtrasPage } from './pages/CorreAtrasPage'
+import { ConsultorPage } from './pages/ConsultorPage'
 
-type Page = 'agents' | 'campaign-list' | 'create-campaign' | 'corre-atras'
+type Page = 'agents' | 'campaign-list' | 'create-campaign' | 'corre-atras' | 'consultor'
 
 const MOCK_BRANDS: Brand[] = [
   { id: '1', name: 'Vivara',       csResponsavel: 'Ana Souza',   logoSrc: 'https://www.figma.com/api/mcp/asset/ed5eb695-3595-48dd-93e0-e44987eaafd9' },
@@ -23,13 +24,17 @@ const MOCK_BRANDS: Brand[] = [
 function IconAgentes() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path
-        d="M7 17L17 7M17 7H9M17 7v8"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function IconConsultor() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l4.93-1.37A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"
+        stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M8 10h8M8 14h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   )
 }
@@ -44,6 +49,7 @@ function breadcrumbFor(page: Page, nav: { toCampaignList: () => void; toAgents: 
     case 'campaign-list':   return [home, agents, { label: 'Corre Atrás' }]
     case 'create-campaign': return [home, agents, corre, { label: 'Criar ação' }]
     case 'corre-atras':     return [home, agents, corre, { label: 'Última chance – Corre atrás' }]
+    case 'consultor':       return [home, { label: 'Consultor IA' }]
   }
 }
 
@@ -66,7 +72,7 @@ export function App() {
   }
 
   const nav = {
-    toAgents:       () => setPage('agents'),
+    toAgents:       () => { setActiveNav('agents'); setPage('agents') },
     toCampaignList: () => setPage('campaign-list'),
   }
 
@@ -76,7 +82,14 @@ export function App() {
       label: 'Agentes IA',
       icon: <IconAgentes />,
       active: activeNav === 'agents',
-      onClick: () => { setActiveNav('agents'); setPage('agents') },
+      onClick: () => nav.toAgents(),
+    },
+    {
+      id: 'consultor',
+      label: 'Consultor IA',
+      icon: <IconConsultor />,
+      active: activeNav === 'consultor',
+      onClick: () => { setActiveNav('consultor'); setPage('consultor') },
     },
   ]
 
@@ -100,6 +113,8 @@ export function App() {
         )
       case 'corre-atras':
         return <CorreAtrasPage />
+      case 'consultor':
+        return <ConsultorPage />
     }
   }
 
