@@ -586,24 +586,6 @@ export function CorreAtrasPage() {
       {activeTab === 'visao-geral' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24, padding: '24px 32px 32px 32px' }}>
 
-          {/* Period indicator */}
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, alignSelf: 'flex-start' }}>
-            <div style={{
-              display: 'flex', alignItems: 'center', gap: 6,
-              height: 32, padding: '0 12px',
-              border: '1px solid var(--cds-border-subtle, #353e45)',
-              borderRadius: 999,
-              backgroundColor: 'var(--cds-bg-layer-02, #22272b)',
-            }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8896A0" strokeWidth="1.5" strokeLinecap="round">
-                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-              </svg>
-              <span style={{ fontSize: 12, fontWeight: 500, color: '#8896A0', whiteSpace: 'nowrap' }}>
-                Últimos 90 dias
-              </span>
-            </div>
-          </div>
-
           {/* Macrocard — resultados do período */}
           <Macrocard
             title="Resultados dos últimos 90 dias"
