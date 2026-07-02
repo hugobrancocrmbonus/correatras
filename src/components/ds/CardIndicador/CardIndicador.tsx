@@ -26,7 +26,7 @@ export function CardIndicador({ title, value, change = '00%', iconSrc = ICON_SRC
         <img
           src={iconSrc}
           alt=""
-          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
         />
       </div>
 
