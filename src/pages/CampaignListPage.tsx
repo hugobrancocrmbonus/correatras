@@ -186,7 +186,7 @@ export function CampaignListPage({ onCreateCampaign, onSelectCampaign }: Campaig
             </thead>
             <tbody>
               {MOCK_CAMPAIGNS.map(c => (
-                <tr key={c.id} style={{ backgroundColor: 'var(--cds-bg-layer-02)' }}>
+                <tr key={c.id}>
                   <td style={tdStyle}>{c.id}</td>
                   <td style={{ ...tdStyle, fontWeight: 500 }}>{c.name}</td>
                   <td style={tdStyle}>{c.lojas}</td>

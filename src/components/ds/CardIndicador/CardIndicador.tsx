@@ -15,10 +15,11 @@ export function CardIndicador({ title, value, change = '00%', iconSrc = ICON_SRC
         alignItems: 'center',
         gap: 8,
         padding: 16,
-        border: '1px solid var(--cds-border-subtle)',
+        border: '1px solid var(--cds-border-subtle, #353e45)',
         borderRadius: 8,
         flex: '1 0 0',
         minWidth: 0,
+        backgroundColor: '#22272b',
       }}
     >
       <div style={{ flexShrink: 0, width: 40, height: 40, position: 'relative' }}>
